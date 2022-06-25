@@ -12,7 +12,7 @@ jobs:
           envkey_POSTGRES_USER: "postgres"
           envkey_POSTGRES_PASSWORD: "123456"
           envkey_POSTGRES_DB: "petsenger"
-          envkey_DATABASE_URL: "postgres://postgres:123456@banco:5432/petsenger"
+          envkey_DATABASE_URL: "postgres://anahristoff:123456@localhost:5432/petsenger"
           file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose-test.yml up --build
