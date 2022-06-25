@@ -11,4 +11,4 @@ appointmentRouter.post(
   appointmentController.setAppoiment
 );
 
-export default appoitmentRouter;
+export default appointmentRouter;

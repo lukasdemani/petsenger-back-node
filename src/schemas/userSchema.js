@@ -1,7 +1,6 @@
 import Joi from "joi";
-import { CreateUserData } from "../services/userService.js";
 
-export const userSchema = Joi.object<CreateUserData>({
+export const userSchema = Joi.object({
   firstName: Joi.string().required(),
   lastName: Joi.string().required(),
   email: Joi.string().required(),

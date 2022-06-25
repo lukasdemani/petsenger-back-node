@@ -1,8 +1,8 @@
-import { NextFunction, Request, Response } from "express";
-import { ObjectSchema } from "joi";
+import pkg from 'joi';
+const { ObjectSchema } = pkg;
 
-export function validateSchemaMiddleware(schema: ObjectSchema) {
-  return (req: Request, res: Response, next: NextFunction) => {
+export function validateSchemaMiddleware(schema) {
+  return (req, res, next) => {
     const validation = schema.validate(req.body);
     if (validation.error) {
       return res.status(422).send({ error: validation.error.message });

@@ -1,19 +1,19 @@
-type AppErrorTypes =
-  | "conflict"
-  | "not_found"
-  | "unauthorized"
-  | "wrong_schema"
-  | "bad_request";
-export interface AppError {
-  type: AppErrorTypes;
-  message: string;
-}
+// type AppErrorTypes =
+//   | "conflict"
+//   | "not_found"
+//   | "unauthorized"
+//   | "wrong_schema"
+//   | "bad_request";
+// export interface AppError {
+//   type: AppErrorTypes;
+//   message: string;
+// }
 
-export function isAppError(error: object): error is AppError {
-  return (error as AppError).type !== undefined;
-}
+// export function isAppError(error): error is AppError {
+//   return (error as AppError).type !== undefined;
+// }
 
-export function errorTypeToStatusCode(type: AppErrorTypes) {
+export function errorTypeToStatusCode(type) {
   if (type === "conflict") return 409;
   if (type === "not_found") return 404;
   if (type === "unauthorized") return 401;
@@ -21,22 +21,22 @@ export function errorTypeToStatusCode(type: AppErrorTypes) {
   return 400;
 }
 
-export function badRequestError(message?: string): AppError {
+export function badRequestError(message) {
   return { type: "bad_request", message };
 }
 
-export function conflictError(message?: string): AppError {
+export function conflictError(message) {
   return { type: "conflict", message };
 }
 
-export function notFoundError(message?: string): AppError {
+export function notFoundError(message){
   return { type: "not_found", message };
 }
 
-export function unauthorizedError(message?: string): AppError {
+export function unauthorizedError(message) {
   return { type: "unauthorized", message };
 }
 
-export function wrongSchemaError(message?: string): AppError {
+export function wrongSchemaError(message) {
   return { type: "wrong_schema", message };
 }

@@ -13,29 +13,30 @@ model User {
   lastName        String 
   email String @unique
   password String 
-  @@map("users")
+  VetAppoitment VetAppoitment[]
+  Travel Travel[]
+  Pet Pet[]
 }
 
 model Pet{
   id Int @id @default(autoincrement())
   name String
   userId Int
-
-  @@map("pets")
+  User User  @relation(fields: [userId], references: [id])
 }
 
 model Travel {
   id Int @id @default(autoincrement())
   origin String
   destination String
-  
-  @@map("travels")
+  userId Int
+  User User  @relation(fields: [userId], references: [id])
 }
 
 model VetAppoitment {
   id Int @id @default(autoincrement())
   dateTime DateTime
-
-  @@map("vetAppoitments")
+  userId Int
+  User User  @relation(fields: [userId], references: [id])
 }
 

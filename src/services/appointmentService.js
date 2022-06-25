@@ -1,5 +1,6 @@
-import { VetAppoitment } from "@prisma/client";
-import appoitmentRepository from "../repositories/userRepository.js";
+import pkg from '@prisma/client';
+const { VetAppoitment } = pkg;
+import appointmentRepository from "../repositories/userRepository.js";
 import findById from "../repositories/userRepository.js";
 
 async function setAppoitment(appointmentData){

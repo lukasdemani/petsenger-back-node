@@ -1,14 +1,13 @@
 import { prisma } from "../database.js";
-import { CreateUserData } from "../services/userService.js";
 
-async function findById(id: number) {
+async function findById(id) {
   return prisma.user.findUnique({
     where: {
       id,
     },
   });
 }
-async function findByEmail(email: string) {
+async function findByEmail(email) {
   return prisma.user.findUnique({
     where: {
       email,
@@ -16,7 +15,7 @@ async function findByEmail(email: string) {
   });
 }
 
-async function insert(createUserData: CreateUserData) {
+async function insert(createUserData) {
   return prisma.user.create({
     data: createUserData,
   });

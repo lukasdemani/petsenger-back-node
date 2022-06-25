@@ -1,4 +1,5 @@
-import { User } from "@prisma/client";
+import pkg from '@prisma/client';
+const { User } = pkg;
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import userRepository from "../repositories/userRepository.js";
@@ -7,6 +8,7 @@ import {
   notFoundError,
   unauthorizedError,
 } from "../utils/errorUtils.js";
+
 
 async function signUp(createUserData) {
   const existingUser = await userRepository.findByEmail(createUserData.email);
