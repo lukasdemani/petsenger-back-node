@@ -16,6 +16,8 @@ model User {
   VetAppoitment VetAppoitment[]
   Travel Travel[]
   Pet Pet[]
+
+  @@map("users")
 }
 
 model Pet{

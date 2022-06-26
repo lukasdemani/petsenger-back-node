@@ -12,8 +12,9 @@ import {
 
 async function signUp(createUserData) {
   const existingUser = await userRepository.findByEmail(createUserData.email);
-  if (existingUser) throw conflictError("Email must be unique");
 
+  if (existingUser) throw conflictError("Email must be unique");
+  
   const hashedPassword = bcrypt.hashSync(createUserData.password, 12);
   await userRepository.insert({ ...createUserData, password: hashedPassword });
 }

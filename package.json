@@ -36,6 +36,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express-async-errors": "^3.1.1",
+    "faker": "^6.6.6",
     "fast-glob": "^3.2.7",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1"

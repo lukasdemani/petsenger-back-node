@@ -10,6 +10,6 @@ async function getQuote(req, res) {
 
 const quoteController = {
   getQuote
-};
+}
 
 export default quoteController;

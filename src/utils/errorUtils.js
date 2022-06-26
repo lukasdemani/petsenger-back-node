@@ -9,9 +9,9 @@
 //   message: string;
 // }
 
-// export function isAppError(error): error is AppError {
-//   return (error as AppError).type !== undefined;
-// }
+export function isAppError(error){
+   return error.type !== undefined;
+ }
 
 export function errorTypeToStatusCode(type) {
   if (type === "conflict") return 409;

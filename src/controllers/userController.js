@@ -2,8 +2,8 @@ import userService from "../services/userService.js";
 
 async function signUp(req, res) {
   const user = req.body;
-  await userService.signUp(user);
-
+  const response = await userService.signUp(user);
+  console.log(response)
   res.sendStatus(201);
 }
 
